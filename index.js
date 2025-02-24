@@ -9,11 +9,7 @@ const menuData = {
         { name: "Ramen", recipe: "Noodles, broth, meat, vegetables." },
         { name: "Tempura", recipe: "Battered and fried vegetables or seafood." },
     ],
-    Italian: [
-        { name: "Spaghetti Carbonara", recipe: "Pasta, eggs, cheese, pancetta." },
-        { name: "Margherita Pizza", recipe: "Pizza dough, mozzarella, tomatoes, basil." },
-        { name: "Tiramisu", recipe: "Coffee, mascarpone, cocoa." },
-    ],
+
 };
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -22,7 +18,7 @@ document.getElementById('menuHeader').innerText = style + ' Menu';
 
 const menuContainer = document.getElementById('menuContainer');
 menuData[style].forEach(item => {
-    const div = document.createElement('div');
+    const div = document.createElement('foodbox');
     div.className = 'menu-item';
     div.innerHTML = `<h3>${item.name}</h3><p>${item.recipe}</p><button onclick="addToCalendar('${item.name}')">Add to Calendar</button>`;
     menuContainer.appendChild(div);
