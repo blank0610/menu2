@@ -1,7 +1,7 @@
 body{
     margin:0px 0px;
     padding: 0px 0px;
-    background-image: url(png/pexels-ella-olsson-572949-1640773.jpg);
+    background-image: url(pexels-ella-olsson-572949-1640773.jpg);
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -184,6 +184,6 @@ aside h2 {
 @media (orientation:portrait) {body{
     margin:0 0;
     padding: 0 0;
-    background-image: url(png/vertical.jpg);
+    background-image: url(vertical.jpg);
     background-size:120%;
 }}
