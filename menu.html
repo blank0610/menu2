@@ -8,17 +8,19 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+        
     </head>
 
 <body>
     <header class="topbar">
         <h1 class="right">
-            <li><a class="home" href="index.html">Home</a></li>
+            <li><a class="home" href="index.html"><i class="fa fa-home"></i></a></li>
         </h1>
 
         <h1 class="left">
-            <li><a href="shoppinglist.html">Shoppinglist</a></li>
-            <li><a href="admin.html">Admin</a></li>
+            <li><a href="shoppinglist.html"><i class="material-icons">shopping_cart</i></a></li>
+            <li><a href="admin.html"><i class="material-icons">person</i></a></li>
         </h1>
     </header>
 
@@ -35,9 +37,9 @@
     <main class="main">
         <article class="menu-container" id="menu-container">
             <h2 class="menu-container" id="menuContainer"></h2>
+            <button id="addpage" class="fa fa-plus" onclick="addpage()"></button>
         </article>
     </main>
-
 
 
     <script defer src="index.js"></script>
