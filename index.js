@@ -15,10 +15,10 @@ const menuData = {
 
 // Define background images for each cuisine
 const backgroundImages = {
-    Chinese: "url('png/cnbg6.jpg')",
-    Japanese: "url('png/jpbg2.jpg')",
-    HongKong: "url('png/hkbg2.jpg')",
-    Italy: "url(png/italy3.jpg)"
+    Chinese: "url('cnbg6.jpg')",
+    Japanese: "url('jpbg2.jpg')",
+    HongKong: "url('hkbg2.jpg')",
+    Italy: "url(italy3.jpg)"
 };
 
 const urlParams = new URLSearchParams(window.location.search);
