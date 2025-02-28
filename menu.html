@@ -19,8 +19,12 @@
         </h1>
 
         <h1 class="left">
+            <li id="language" class="language">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Flag_of_Hong_Kong.svg" alt="hongkong Flag" class="flag-icon">
+            </li>
             <li><a href="shoppinglist.html"><i class="material-icons">shopping_cart</i></a></li>
             <li><a href="admin.html"><i class="material-icons">person</i></a></li>
+            
         </h1>
     </header>
 
@@ -29,16 +33,35 @@
         <article class="sidebar">
             <button onclick="location.href='menu.html?style=Chinese'">Chinese</button>
             <button onclick="location.href='menu.html?style=Japanese'">Japanese</button>
-            <button onclick="location.href='menu.html?style=UK'">UK</button>
+            <button onclick="location.href='menu.html?style=HongKong'">HK</button>
+            <button onclick="location.href='menu.html?style=Italy'">Italy</button>
         </article>
 
     </aside>
 
     <main class="main">
         <article class="menu-container" id="menu-container">
-            <h2 class="menu-container" id="menuContainer"></h2>
+            <h2 class="menu-container" id="menuContainer">
             <button id="addpage" class="fa fa-plus" onclick="addpage()"></button>
+            </h2>
+
+            <div id="addFoodForm" class="hidden">
+                <h3>Add New Food Item</h3>
+                <label for="foodName">Food Name:</label>
+                <input type="text" id="foodName" required>
+                <label for="foodRecipe">Recipe:</label>
+                <textarea id="foodRecipe" required></textarea>
+                <button id="submitFood" onclick="submitFood()">Submit</button>
+                <button id="cancelFood" onclick="cancelAdd()">Cancel</button>
+            </div>
+
         </article>
+
+        <div class="calendar-container">
+            <h2>Your Selected Foods</h2>
+            <button id="addToCalendar">Add to Calendar</button>
+        </div>
+
     </main>
 
 
