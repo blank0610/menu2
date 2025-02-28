@@ -17,8 +17,12 @@
         </h1>
 
         <h1 class="left">
+            <li id="language" class="language">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Flag_of_Hong_Kong.svg" alt="hongkong Flag" class="flag-icon">
+            </li>
             <li><a href="shoppinglist.html"><i class="material-icons">shopping_cart</i></a></li>
             <li><a href="admin.html"><i class="material-icons">person</i></a></li>
+            
         </h1>
     </header>
 
@@ -27,16 +31,27 @@
         <article class="sidebar">
             <button onclick="location.href='menu.html?style=Chinese'">Chinese</button>
             <button onclick="location.href='menu.html?style=Japanese'">Japanese</button>
+            <button onclick="location.href='menu.html?style=HongKong'">HK</button>
             <button onclick="location.href='menu.html?style=UK'">UK</button>
+
+            
         </article>
 
     </aside>
 
+
     <main class="main">
         <article class="menu-container" id="menu-container">
-            <h2 class="calander" id="calander">test</h2>
-            <button id="addpage" class="fa fa-plus" onclick="addpage()"></button>
+            <h2 class="calendar" id="calendar">Your Calendar</h2>
+            <div id="calendarList"></div> <!-- Container for calendar items -->
+            <button id="indexaddpage" class="fa fa-plus" onclick="addpage()"></button>
         </article>
+
+        <div class="calendar-container">
+            <h2>Your Selected Foods</h2>
+            <ul id="calendarList"></ul>
+            <button id="addToCalendar">Add to Calendar</button>
+        </div>
 
     </main>
 
