@@ -864,13 +864,13 @@ const menuData = {
 
 // Define background images for each cuisine
 const backgroundImages = {
-    Chinese: "url('png/cn8.jpg')",
-    Japanese: "url('png/jp3.jpg')",
-    HongKong: "url('png/hk5.jpg')",
-    Italy: "url('png/italy5.jpg')",
-    Dessert: "url('png/d6.jpg')",
-    Drink: "url('png/drink3.jpg')",
-    Sauce: "url('png/s4.jpg')"
+    Chinese: "url('cn8.jpg')",
+    Japanese: "url('jp3.jpg')",
+    HongKong: "url('hk5.jpg')",
+    Italy: "url('italy5.jpg')",
+    Dessert: "url('d6.jpg')",
+    Drink: "url('drink3.jpg')",
+    Sauce: "url('s4.jpg')"
 };
 
 const backgroundSize = {
