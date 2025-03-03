@@ -19,8 +19,9 @@
         </h1>
 
         <h1 class="left">
-            <li id="language" class="language">
+            <li id="language" class="language"><a href="indexcn.html">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Flag_of_Hong_Kong.svg" alt="hongkong Flag" class="flag-icon">
+            </a></li>
             </li>
             <li><a href="shoppinglist.html"><i class="material-icons">shopping_cart</i></a></li>
             <li><a href="admin.html"><i class="material-icons">person</i></a></li>
@@ -35,6 +36,10 @@
             <button onclick="location.href='menu.html?style=Japanese'">Japanese</button>
             <button onclick="location.href='menu.html?style=HongKong'">HK</button>
             <button onclick="location.href='menu.html?style=Italy'">Italy</button>
+            <button onclick="location.href='menu.html?style=Drink'">Drink</button>
+            <button onclick="location.href='menu.html?style=Dessert'">Dessert</button>
+            <button onclick="location.href='menu.html?style=Sauce'">Sauce</button>
+
         </article>
 
     </aside>
@@ -55,12 +60,18 @@
                 <button id="cancelFood" onclick="cancelAdd()">Cancel</button>
             </div>
 
+            <div id="detailModal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalItem"></p>
+                    <p id="modalRecipe"></p>
+                    <p id="modalNote"></p>
+                </div>
+            </div>
+
         </article>
 
-        <div class="calendar-container">
-            <h2>Your Selected Foods</h2>
-            <button id="addToCalendar">Add to Calendar</button>
-        </div>
 
     </main>
 
