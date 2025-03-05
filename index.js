@@ -866,23 +866,23 @@ const menuData = {
 
 // Define background images for each cuisine
 const backgroundImages = {
-    Chinese: "url('cn8.jpg')",
-    Japanese: "url('jp3.jpg')",
-    HongKong: "url('hk5.jpg')",
-    Italy: "url('italy5.jpg')",
-    Dessert: "url('d6.jpg')",
-    Drink: "url('drink3.jpg')",
-    Sauce: "url('s4.jpg')"
+    Chinese: "url('png/cn8.jpg')",
+    Japanese: "url('png/jp3.jpg')",
+    HongKong: "url('png/hk5.jpg')",
+    Italy: "url('png/italy5.jpg')",
+    Dessert: "url('png/d6.jpg')",
+    Drink: "url('png/drink3.jpg')",
+    Sauce: "url('png/s4.jpg')"
 };
 
 const landscapebackgroundImages = {
-    Chinese: "url('cnv1.jpg')",
-    Japanese: "url('jpv1.jpg')",
-    HongKong: "url('hkv2.jpg')",
-    Italy: "url('iv3.jpg')",
-    Dessert: "url('dv5.jpg')", // Corrected the filename from dv1jpg to dv1.jpg
-    Drink: "url('drinkv1.jpg')",
-    Sauce: "url('s4-landscape.jpg')",
+    Chinese: "url('png/cnv1.jpg')",
+    Japanese: "url('png/jpv1.jpg')",
+    HongKong: "url('png/hkv2.jpg')",
+    Italy: "url('png/iv3.jpg')",
+    Dessert: "url('png/dv5.jpg')", // Corrected the filename from dv1jpg to dv1.jpg
+    Drink: "url('png/drinkv1.jpg')",
+    Sauce: "url('png/s4-landscape.jpg')",
 };
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -999,10 +999,13 @@ function showDetails(name, cuisine) {
 }
 
 // Function to close the modal
-function closeModal() {
-    document.getElementById('detailModal').classList.add('hidden');
+function closeModal(event) {
+    if (event && event.target === document.getElementById('detailModal')) {
+        document.getElementById('detailModal').classList.add('hidden');
+    } else {
+        document.getElementById('detailModal').classList.add('hidden');
+    }
 }
-
 // Function to add a food item
 const addFoodForm = document.getElementById('addFoodForm');
 
