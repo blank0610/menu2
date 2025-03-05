@@ -866,46 +866,49 @@ const menuData = {
 
 // Define background images for each cuisine
 const backgroundImages = {
-    Chinese: "url('cn8.jpg')",
-    Japanese: "url('jp3.jpg')",
-    HongKong: "url('hk5.jpg')",
-    Italy: "url('italy5.jpg')",
-    Dessert: "url('d6.jpg')",
-    Drink: "url('drink3.jpg')",
-    Sauce: "url('s4.jpg')"
+    Chinese: "url('png/cn8.jpg')",
+    Japanese: "url('png/jp3.jpg')",
+    HongKong: "url('png/hk5.jpg')",
+    Italy: "url('png/italy5.jpg')",
+    Dessert: "url('png/d6.jpg')",
+    Drink: "url('png/drink3.jpg')",
+    Sauce: "url('png/s4.jpg')"
 };
 
 const landscapebackgroundImages = {
-    Chinese: "url('cnv1.jpg')",
-    Japanese: "url('jpv1.jpg')",
-    HongKong: "url('hkv2.jpg')",
-    Italy: "url('iv3.jpg')",
-    Dessert: "url('dv5.jpg')", // Corrected the filename from dv1jpg to dv1.jpg
-    Drink: "url('drinkv1.jpg')",
-    Sauce: "url('s4-landscape.jpg')",
+    Chinese: "url('png/cnv1.jpg')",
+    Japanese: "url('png/jpv1.jpg')",
+    HongKong: "url('png/hkv2.jpg')",
+    Italy: "url('png/iv3.jpg')",
+    Dessert: "url('png/dv5.jpg')", // Corrected the filename from dv1jpg to dv1.jpg
+    Drink: "url('png/drinkv1.jpg')",
+    Sauce: "url('png/s4-landscape.jpg')",
 };
 
 const urlParams = new URLSearchParams(window.location.search);
 const style = urlParams.get('style');
 
 function setBackground() {
+    const backgroundImage = document.body.dataset.background; // Get the background from data attribute
     const isMobile = window.innerWidth <= 768; // Check if it's mobile
     const styleImage = backgroundImages[style] || "none"; // Default image for normal view
     const landscapeImage = landscapebackgroundImages[style] || "none"; // Default image for landscape
 
-    if (isMobile) {
-        if (window.matchMedia("(orientation: portrait)").matches) {
-            document.body.style.backgroundImage = landscapeImage; // Use the normal style image for portrait
-        } else {
-            document.body.style.backgroundImage = landscapeImage; // Use the landscape style image for landscape
-        }
-    } else {
-        document.body.style.backgroundImage = styleImage; // Use the default style image for larger screens
+    if (backgroundImage) {
+        document.body.style.backgroundImage = `url('${backgroundImage}')`; // Set the background image
     }
 
-    // Ensure it covers the entire area
-    document.body.style.backgroundSize = "150%";
-    document.body.style.backgroundPosition = "top";
+    if (isMobile) {
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            document.body.style.backgroundImage = landscapeImage; // Use landscape image for portrait
+        } else {
+            document.body.style.backgroundImage = landscapeImage; // Use landscape image for landscape
+        }
+        document.body.style.backgroundSize = "150%";
+        document.body.style.backgroundPosition = "top";
+    } else {
+        document.body.style.backgroundImage = styleImage; // Use the default style image for larger screens
+    }    
 }
 
 // Call the function to set the background when the page loads
