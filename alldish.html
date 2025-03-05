@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Dishes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1 class="right">
+            <li><a class="home" href="index.html"><i class="fa fa-home"></i></a></li>
+        </h1>
+        <h1 class="left">
+            <li id="language" class="language"><a href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Flag_of_Hong_Kong.svg" alt="hongkong Flag" class="flag-icon">
+            </a></li>
+            <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
+            <li><a href="#"><i class="material-icons">person</i></a></li>
+        </h1>
+    </header>
+
+    <aside class="options-container">
+        <h2 class="all-menu-h2" id="menuHeader"></h2>
+        <h3>All Dish</h3>
+        <article class="sidebar">
+            <button onclick="location.href='alldish.html'">All Dish</button>
+            <button onclick="location.href='menu.html?style=Chinese'">Chinese</button>
+            <button onclick="location.href='menu.html?style=Japanese'">Japanese</button>
+            <button onclick="location.href='menu.html?style=HongKong'">HK</button>
+            <button onclick="location.href='menu.html?style=Italy'">Italy</button>
+            <button onclick="location.href='menu.html?style=Drink'">Drink</button>
+            <button onclick="location.href='menu.html?style=Dessert'">Dessert</button>
+            <button onclick="location.href='menu.html?style=Sauce'">Sauce</button>
+        </article>
+    </aside>
+
+    <main class="main">
+        <article class="allDishesContainer" id="allDishesContainer">
+            <h2 class="menu-container" id="menuContainer">
+            </h2>
+
+            <div id="addFoodForm" class="hidden">
+                <h3>Add New Food Item</h3>
+                <label for="foodName">Food Name:</label>
+                <input type="text" id="foodName" required>
+                <label for="foodRecipe">Recipe:</label>
+                <textarea id="foodRecipe" required></textarea>
+                <button id="submitFood" onclick="submitFood()">Submit</button>
+                <button id="cancelFood" onclick="cancelAdd()">Cancel</button>
+            </div>
+
+            <div id="detailModal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalItem"></p>
+                    <p id="modalRecipe"></p>
+                    <p id="modalNote"></p>
+                </div>
+            </div>
+
+        </article>
+
+
+    </main>
+
+
+
+    
+    <script src="index.js"></script>
+
+</body>
+</html>
