@@ -922,31 +922,29 @@ document.getElementById('menuHeader').innerText = `${style} Menu`;
 
 // Render the menu items (assuming you have the necessary HTML structure)
 const menuContainer = document.getElementById('menuContainer');
-const allDishesContainer = document.getElementById('allDishesContainer');
 const addPageButton = document.getElementById('addpage'); // Select the add page button
 
+// Render main menu
 // Render main menu
 if (menuData[style]) {
     menuData[style].forEach(item => {
         const div = document.createElement('li');
         div.className = 'menu-item';
         div.innerHTML = `
-            <div>
-                <h3>${item.name}</h3>
-                <ul class="diff">${item.difficulty}</ul>
-                <ul class="time">${item.time}</ul>
-                <button class="edit" onclick="editItem('${item.name}')">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="delete" onclick="deleteItem('${item.name}')">
-                    <i class="fas fa-trash"></i>
-                </button>
-                <button class="showdetail" onclick="showDetails('${item.name}', '${style}')">
-                    <i class="fa fa-bars"></i>
-                </button>
-            </div>
+            <button class="dish-button" onclick="showDetails('${item.name}', '${style}')">
+                <div>
+                    <h3>${item.name}</h3>
+                    <ul class="diff">${item.difficulty}</ul>
+                    <ul class="time">${item.time}</ul>
+                    <button class="edit" onclick="editItem('${item.name}'); event.stopPropagation();">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete" onclick="deleteItem('${item.name}'); event.stopPropagation();">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </button>
         `;
-
         // Insert the new food box before the add page button
         menuContainer.insertBefore(div, addPageButton);
     });
@@ -954,6 +952,8 @@ if (menuData[style]) {
     document.getElementById('menuHeader').innerText = 'Menu Not Found';
 }
 
+const allDishesContainer = document.getElementById('allDishesContainer');
+// Function to display all dishes
 // Function to display all dishes
 function displayAllDishes() {
     for (const cuisine in menuData) {
@@ -961,20 +961,19 @@ function displayAllDishes() {
             const li = document.createElement('li');
             li.className = 'all-menu-item'; // Add class for styling
             li.innerHTML = `
-            <div>
-                <h3>${dish.name}</h3>
-                <ul class="diff">${dish.difficulty}</ul>
-                <ul class="time">${dish.time}</ul>
-                <button class="edit" onclick="editItem('${dish.name}')">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="delete" onclick="deleteItem('${dish.name}')">
-                    <i class="fas fa-trash"></i>
-                </button>
-                <button class="showdetail" onclick="showDetails('${dish.name}', '${cuisine}')">
-                    <i class="fa fa-bars"></i>
-                </button>
-            </div>
+            <button class="dish-button" onclick="showDetails('${dish.name}', '${cuisine}')">
+                <div>
+                    <h3>${dish.name}</h3>
+                    <ul class="diff">${dish.difficulty}</ul>
+                    <ul class="time">${dish.time}</ul>
+                    <button class="edit" onclick="editItem('${dish.name}'); event.stopPropagation();">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete" onclick="deleteItem('${dish.name}'); event.stopPropagation();">
+                        <i class="fas fa-trash"></i>
+                    </button
+                </div>
+            </button>
             `;
             allDishesContainer.appendChild(li);
         });
