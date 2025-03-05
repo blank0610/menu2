@@ -862,34 +862,67 @@ const menuData = {
         ],
     };
 
+
+
 // Define background images for each cuisine
 const backgroundImages = {
-    Chinese: "url('cn8.jpg')",
-    Japanese: "url('jp3.jpg')",
-    HongKong: "url('hk5.jpg')",
-    Italy: "url('italy5.jpg')",
-    Dessert: "url('d6.jpg')",
-    Drink: "url('drink3.jpg')",
-    Sauce: "url('s4.jpg')"
+    Chinese: "url('png/cn8.jpg')",
+    Japanese: "url('png/jp3.jpg')",
+    HongKong: "url('png/hk5.jpg')",
+    Italy: "url('png/italy5.jpg')",
+    Dessert: "url('png/d6.jpg')",
+    Drink: "url('png/drink3.jpg')",
+    Sauce: "url('png/s4.jpg')"
 };
 
-const backgroundSize = {
-    Dessert: "cover",
-}
+const landscapebackgroundImages = {
+    Chinese: "url('png/cnv1.jpg')",
+    Japanese: "url('png/jpv1.jpg')",
+    HongKong: "url('png/hkv2.jpg')",
+    Italy: "url('png/iv3.jpg')",
+    Dessert: "url('png/dv5.jpg')", // Corrected the filename from dv1jpg to dv1.jpg
+    Drink: "url('png/drinkv1.jpg')",
+    Sauce: "url('png/s4-landscape.jpg')",
+};
 
 const urlParams = new URLSearchParams(window.location.search);
 const style = urlParams.get('style');
 
-// Change the header text and background image
-document.getElementById('menuHeader').innerText = style + ' Menu';
-document.body.style.backgroundImage = backgroundImages[style] || "none"; // Set background image
-document.body.style.backgroundSize = backgroundSize[style] || "none"; // Set background image
+function setBackground() {
+    const isMobile = window.innerWidth <= 768; // Check if it's mobile
+    const styleImage = backgroundImages[style] || "none"; // Default image for normal view
+    const landscapeImage = landscapebackgroundImages[style] || "none"; // Default image for landscape
 
+    if (isMobile) {
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            document.body.style.backgroundImage = landscapeImage; // Use the normal style image for portrait
+        } else {
+            document.body.style.backgroundImage = landscapeImage; // Use the landscape style image for landscape
+        }
+    } else {
+        document.body.style.backgroundImage = styleImage; // Use the default style image for larger screens
+    }
 
+    // Ensure it covers the entire area
+    document.body.style.backgroundSize = "150%";
+    document.body.style.backgroundPosition = "top";
+}
+
+// Call the function to set the background when the page loads
+setBackground();
+
+// Optional: Call the function on window resize
+window.addEventListener('resize', setBackground);
+
+// Change the header text
+document.getElementById('menuHeader').innerText = `${style} Menu`;
+
+// Render the menu items (assuming you have the necessary HTML structure)
 const menuContainer = document.getElementById('menuContainer');
+const allDishesContainer = document.getElementById('allDishesContainer');
 const addPageButton = document.getElementById('addpage'); // Select the add page button
 
-// Foodbox
+// Render main menu
 if (menuData[style]) {
     menuData[style].forEach(item => {
         const div = document.createElement('li');
@@ -897,15 +930,15 @@ if (menuData[style]) {
         div.innerHTML = `
             <div>
                 <h3>${item.name}</h3>
-                <ul class="diff" id="diff">${item.difficulty}</ul>
-                <ul class="time" id="time">${item.time}</ul>
+                <ul class="diff">${item.difficulty}</ul>
+                <ul class="time">${item.time}</ul>
                 <button class="edit" onclick="editItem('${item.name}')">
                     <i class="fas fa-edit"></i>
                 </button>
                 <button class="delete" onclick="deleteItem('${item.name}')">
                     <i class="fas fa-trash"></i>
                 </button>
-                <button class="showdetail" onclick="showDetails('${item.name}')">
+                <button class="showdetail" onclick="showDetails('${item.name}', '${style}')">
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
@@ -915,26 +948,48 @@ if (menuData[style]) {
         menuContainer.insertBefore(div, addPageButton);
     });
 } else {
-    document.getElementById('menuHeader').innerText = 'Menu Not Found'; // Error handling
+    document.getElementById('menuHeader').innerText = 'Menu Not Found';
 }
 
+// Function to display all dishes
+function displayAllDishes() {
+    for (const cuisine in menuData) {
+        menuData[cuisine].forEach(dish => {
+            const li = document.createElement('li');
+            li.className = 'all-menu-item'; // Add class for styling
+            li.innerHTML = `
+            <div>
+                <h3>${dish.name}</h3>
+                <ul class="diff">${dish.difficulty}</ul>
+                <ul class="time">${dish.time}</ul>
+                <button class="edit" onclick="editItem('${dish.name}')">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button class="delete" onclick="deleteItem('${dish.name}')">
+                    <i class="fas fa-trash"></i>
+                </button>
+                <button class="showdetail" onclick="showDetails('${dish.name}', '${cuisine}')">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            `;
+            allDishesContainer.appendChild(li);
+        });
+    }
+}
+
+// Call the function to display all dishes on page load
+displayAllDishes();
+
 // Function to show details in a modal
-function showDetails(name) {
-    const item = menuData[style].find(dish => dish.name === name);
+function showDetails(name, cuisine) {
+    const item = menuData[cuisine].find(dish => dish.name === name);
     if (item) {
         document.getElementById('modalTitle').innerText = item.name;
-
-        // Display ingredients as a single string without commas
-        document.getElementById('modalItem').innerText = item.item ? `Ingredients:\n${item.item.join('')}` : '';
-
-        // Display recipe as a single string with line breaks
+        document.getElementById('modalItem').innerText = item.item ? `Ingredients:\n${item.item.join(' ')}` : '';
         document.getElementById('modalRecipe').innerText = item.recipe ? `Recipe:\n${item.recipe.join('\n')}` : '';
-
-        // Display note if it exists
         document.getElementById('modalNote').innerText = item.note ? `Note: ${item.note}` : '';
-
-        // Show the modal
-        document.getElementById('detailModal').classList.remove('hidden');
+        document.getElementById('detailModal').classList.remove('hidden'); // Show the modal
     } else {
         alert("Dish not found.");
     }
@@ -949,7 +1004,6 @@ function closeModal() {
 const addFoodForm = document.getElementById('addFoodForm');
 
 function addpage() {
-    // Show the hidden form
     addFoodForm.classList.remove('hidden');
 }
 
@@ -957,19 +1011,11 @@ function submitFood() {
     const foodName = document.getElementById('foodName').value;
     const foodRecipe = document.getElementById('foodRecipe').value;
 
-    // Check if the user provided values
     if (foodName && foodRecipe) {
-        // Add the new food item to the menu data
         menuData[style].push({ name: foodName, recipe: foodRecipe });
-
-        // Clear the input fields
         document.getElementById('foodName').value = '';
         document.getElementById('foodRecipe').value = '';
-
-        // Hide the form again
         addFoodForm.classList.add('hidden');
-
-        // Refresh displayed menu items
         displayMenuItems();
     } else {
         alert("Please enter both food name and recipe.");
@@ -977,20 +1023,9 @@ function submitFood() {
 }
 
 function cancelAdd() {
-    // Hide the form without adding an item
     addFoodForm.classList.add('hidden');
-
-    // Clear the input fields
     document.getElementById('foodName').value = '';
     document.getElementById('foodRecipe').value = '';
-}
-
-const calendarList = document.getElementById('calendarList');
-
-function addToCalendar(food) {
-    const listItem = document.createElement('li');
-    listItem.textContent = food;
-    calendarList.appendChild(listItem);
 }
 
 // Placeholder functions for edit and delete
