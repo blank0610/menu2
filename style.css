@@ -178,6 +178,7 @@ aside h2 {
 
 /* from js*/
 
+
 #menuContainer {
     display: flex; /* Use flexbox layout for menu items */
     align-items: flex-start; /* Align items at the start of the container */
@@ -185,6 +186,7 @@ aside h2 {
     margin: 0%;
     margin-left: 0%;
     margin-right: 15px;
+    padding-bottom: 100px;
     gap: 20px; /* Space between items */
     text-align: center;
     justify-content: left; /* Center items horizontally */
@@ -358,13 +360,14 @@ display: inline;
     display: flex; /* Use flexbox layout for menu items */
     align-items: flex-start; /* Align items at the start of the container */
     flex-wrap: wrap; /* Allow items to wrap to the next line */
-    margin: 0%;
-    margin-left: 0%;
     margin-right: 15px;
+    margin-bottom: 4000px;
     gap: 20px; /* Space between items */
     text-align: center;
     justify-content: left; /* Center items horizontally */
 }
+
+
 
 .all-menu-item {
     position: relative;        /* Set relative positioning for the container */
@@ -417,6 +420,7 @@ display: inline;
         position:fixed;
         background-position: top;
         background-image: url(png/mainv.jpg);
+        
     }
 
     header {
@@ -434,9 +438,10 @@ display: inline;
         margin-left: 5%;
     }
 
-    .all-menu-item:first-child {
-        margin-left: -50px;
+    .menu-item:first-child,.all-menu-item:first-child {
+        margin-top: 10%;
     }
+
 
     .modal-content {
         margin-top: 30%;
