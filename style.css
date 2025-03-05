@@ -1,7 +1,7 @@
 body{
     margin:0px 0px;
     padding: 0px 0px;
-    background-image: url(pexels-ella-olsson-572949-1640773.jpg);
+    background-image: url(png/pexels-ella-olsson-572949-1640773.jpg);
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -78,6 +78,11 @@ header {
     font-size: 120%;
 }
 
+.all-menu-h2 {
+    display: none;
+    font-size: 120%;
+}
+
 .sidebar button {
     display: block; /* Use block to stack buttons vertically */
     opacity: 0.9;
@@ -98,6 +103,8 @@ header {
 .sidebar button:hover {
     background-color: black; /* Darker background on hover */
 }
+
+
 
 .main {
     overflow-y:visible;
@@ -166,6 +173,8 @@ aside h2 {
 #addpage:hover {
     transform: scale(1.03);
 }
+
+
 
 /* from js*/
 
@@ -271,6 +280,7 @@ aside h2 {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    position: relative;
 }
 
 .close:hover,
@@ -344,11 +354,96 @@ display: inline;
 }
 
 
+#allDishesContainer {
+    display: flex; /* Use flexbox layout for menu items */
+    align-items: flex-start; /* Align items at the start of the container */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    margin: 0%;
+    margin-left: 0%;
+    margin-right: 15px;
+    gap: 20px; /* Space between items */
+    text-align: center;
+    justify-content: left; /* Center items horizontally */
+}
+
+.all-menu-item {
+    position: relative;        /* Set relative positioning for the container */
+    text-align: center;
+    padding: 10px;
+    padding-top: 0%;
+    font-size: 100%;
+    background-color: white;  /* White background for menu items */
+    border: 1px solid #ccc;   /* Light border */
+    border-radius: 8px;       /* Rounded corners */
+    width: 200px;              /* Fixed width for all items */
+    height: 150px;             /* Fixed height for all items */
+    display: flex;            /* Use flexbox for inner content */
+    flex-direction: column;   /* Stack content vertically */
+    justify-content: space-between; /* Space out content */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.all-menu-item:hover {
+    transform: scale(1.03); /* Slightly enlarge on hover */
+}
+
+.all-menu-item li{
+    text-align: center;
+    margin: 10%;
+    width: 10%;
+}
 
 
-@media (orientation:portrait) {body{
-    margin:0 0;
-    padding: 0 0;
-    background-image: url(vertical.jpg);
-    background-size:cover;
-}}
+.all-menu-item h3 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.all-menu-item div {
+    text-align: center;
+    margin-top: 0%;
+}
+
+.all-menu-item ul {
+    text-align: center;
+    padding: 0;
+    margin-top: 5%;
+}
+
+
+
+@media (orientation:portrait) {
+    body {
+        position:fixed;
+        background-position: top;
+        background-image: url(png/mainv.jpg);
+    }
+
+    header {
+        width: 100vw;
+    }
+
+    #indexaddpage {
+        margin: 0px 0px;
+        padding: 5% 10%;
+        text-align: left;
+
+    }
+    
+    .menu-item, .all-menu-item {
+        margin-left: 5%;
+    }
+
+    .all-menu-item:first-child {
+        margin-left: -50px;
+    }
+
+    .modal-content {
+        margin-top: 30%;
+    }
+
+    #addpage {
+        display: none;
+    }
+
+}
