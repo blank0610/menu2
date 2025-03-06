@@ -228,36 +228,7 @@ const menuData = {
             
         ],
         HongKong: [
-            
-            { 
-                name: "芝士忌廉蝦意粉", 
-                item: [
-                    "1人份 (1 Person)\n",
-                    "闊條麵 (Fettuccine or Pappardelle) 115g\n",
-                    "蒜頭 (Garlic) 1 clove\n",
-                    "檸檬 (Lemon) 1/4\n",
-                    "無鹽牛油 (Unsalted Butter) 15g\n",
-                    "蝦 (Shrimp) 115g\n",
-                    "淡忌廉 (Whipping Cream or Heavy Cream) 105ml\n",
-                    "鹽 (Salt) 1/4 tsp\n",
-                    "巴馬臣芝士 (Parmesan Cheese) 8g\n",
-                    "黑椒 (Black Pepper) 少許\n"
-                ],                
-                recipe: [
-                    "1. 水加鹽煮沸, 按包裝指示時間減一分鐘煮熟闊條麵備用。 (Boil water with salt, cook fettuccine according to package instructions minus one minute.)", 
-                    "2. 蒜頭去皮拍扁備用。 (Peel and crush the garlic and set aside.)", 
-                    "3. 檸檬刨皮, 切片去籽備用。 (Zest the lemon, slice it, and remove the seeds.)", 
-                    "4. 煮溶牛油, 加入蒜頭及檸檬片煮勻。 (Melt the butter, add garlic and lemon slices, and mix well.)", 
-                    "5. 加入蝦炒熟後盛起備用, 檸檬片及蒜頭取走。 (Add the shrimp and stir-fry until cooked, then set aside, removing the lemon slices and garlic.)", 
-                    "6. 淡忌廉加鹽以小火煮勻。 (Heat the whipping cream with salt over low heat, stirring well.)", 
-                    "7. 加入蝦, 檸檬皮及巴馬臣芝士煮勻。 (Add the shrimp, lemon zest, and Parmesan cheese, and mix well.)", 
-                    "8. 加入闊條麵以小火拌勻後盛起。 (Add the fettuccine, mix well over low heat, and serve.)", 
-                    "9. 灑上少許黑椒及巴馬臣芝士, 完成。 (Sprinkle with a little black pepper and Parmesan cheese, and it’s done.)"
-                ], 
-                difficulty: "Hard", 
-                time: "90 min", 
-                note: "2 day meal" 
-            },
+        
             {
                 name: "土匪雞翼", 
                 item: [
@@ -516,6 +487,35 @@ const menuData = {
 
         ],
         Italy: [
+                { 
+                name: "芝士忌廉蝦意粉", 
+                item: [
+                    "1人份 (1 Person)\n",
+                    "闊條麵 (Fettuccine or Pappardelle) 115g\n",
+                    "蒜頭 (Garlic) 1 clove\n",
+                    "檸檬 (Lemon) 1/4\n",
+                    "無鹽牛油 (Unsalted Butter) 15g\n",
+                    "蝦 (Shrimp) 115g\n",
+                    "淡忌廉 (Whipping Cream or Heavy Cream) 105ml\n",
+                    "鹽 (Salt) 1/4 tsp\n",
+                    "巴馬臣芝士 (Parmesan Cheese) 8g\n",
+                    "黑椒 (Black Pepper) 少許\n"
+                ],                
+                recipe: [
+                    "1. 水加鹽煮沸, 按包裝指示時間減一分鐘煮熟闊條麵備用。 (Boil water with salt, cook fettuccine according to package instructions minus one minute.)", 
+                    "2. 蒜頭去皮拍扁備用。 (Peel and crush the garlic and set aside.)", 
+                    "3. 檸檬刨皮, 切片去籽備用。 (Zest the lemon, slice it, and remove the seeds.)", 
+                    "4. 煮溶牛油, 加入蒜頭及檸檬片煮勻。 (Melt the butter, add garlic and lemon slices, and mix well.)", 
+                    "5. 加入蝦炒熟後盛起備用, 檸檬片及蒜頭取走。 (Add the shrimp and stir-fry until cooked, then set aside, removing the lemon slices and garlic.)", 
+                    "6. 淡忌廉加鹽以小火煮勻。 (Heat the whipping cream with salt over low heat, stirring well.)", 
+                    "7. 加入蝦, 檸檬皮及巴馬臣芝士煮勻。 (Add the shrimp, lemon zest, and Parmesan cheese, and mix well.)", 
+                    "8. 加入闊條麵以小火拌勻後盛起。 (Add the fettuccine, mix well over low heat, and serve.)", 
+                    "9. 灑上少許黑椒及巴馬臣芝士, 完成。 (Sprinkle with a little black pepper and Parmesan cheese, and it’s done.)"
+                ], 
+                difficulty: "Hard", 
+                time: "90 min", 
+                note: "2 day meal" 
+            },
             {   
             name: "海鮮芝士意粉", 
             item: [
