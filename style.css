@@ -201,8 +201,8 @@ aside h2 {
     background-color: white;  /* White background for menu items */
     border: 1px solid #ccc;   /* Light border */
     border-radius: 8px;       /* Rounded corners */
-    width: 180px;              /* Fixed width for all items */
-    height: 120px;             /* Fixed height for all items */
+    width: 200px;              /* Fixed width for all items */
+    height: 150px;             /* Fixed height for all items */
     display: flex;            /* Use flexbox for inner content */
     flex-direction: column;   /* Stack content vertically */
     justify-content: space-between; /* Space out content */
