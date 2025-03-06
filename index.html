@@ -10,34 +10,35 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 
-    <body data-background="png/pexels-ella-olsson-572949-1640773.jpg">
-    <header class="topbar">
-        <h1 class="right">
-            <li><a class="home" href="index.html"><i class="fa fa-home"></i></a></li>
-        </h1>
-        <h1 class="left">
-            <li id="language" class="language"><a href="#">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Flag_of_Hong_Kong.svg" alt="hongkong Flag" class="flag-icon">
-            </a></li>
-            <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
-            <li><a href="#"><i class="material-icons">person</i></a></li>
-        </h1>
-    </header>
-
-    <aside class="options-container">
-        <h2>Main menu</h2>
-        <article class="sidebar">
-            <button onclick="location.href='alldish.html'">All Dish</button>
-            <button onclick="location.href='menu.html?style=Chinese'">Chinese</button>
-            <button onclick="location.href='menu.html?style=Japanese'">Japanese</button>
-            <button onclick="location.href='menu.html?style=HongKong'">HK</button>
-            <button onclick="location.href='menu.html?style=Italy'">Italy</button>
-            <button onclick="location.href='menu.html?style=Drink'">Drink</button>
-            <button onclick="location.href='menu.html?style=Dessert'">Dessert</button>
-            <button onclick="location.href='menu.html?style=Sauce'">Sauce</button>
-        </article>
-
-    </aside>
+    <body>
+        <header class="topbar">
+            <h1 class="right">
+                <li><a class="home" href="index.html?style=index"><i class="fa fa-home"></i></a></li>
+            </h1>
+            <h1 class="left">
+                <li id="language" class="language"><a href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Flag_of_Hong_Kong.svg" alt="hongkong Flag" class="flag-icon">
+                </a></li>
+                <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
+                <li><a href="#"><i class="material-icons">person</i></a></li>
+            </h1>
+        </header>
+    
+        <aside class="options-container">
+            <h2 id="menuHeader" class="hidden-title"></h2>
+            <h3>Calendar</h3>
+            <article class="sidebar">
+                <button onclick="location.href='alldish.html?style=alldish'">All Dish</button>
+                <button onclick="location.href='menu.html?style=Chinese'">Chinese</button>
+                <button onclick="location.href='menu.html?style=Japanese'">Japanese</button>
+                <button onclick="location.href='menu.html?style=HongKong'">HK</button>
+                <button onclick="location.href='menu.html?style=Italy'">Italy</button>
+                <button onclick="location.href='menu.html?style=Drink'">Drink</button>
+                <button onclick="location.href='menu.html?style=Dessert'">Dessert</button>
+                <button onclick="location.href='menu.html?style=Sauce'">Sauce</button>
+            </article>
+    
+        </aside>
 
 
     <main class="main" >
