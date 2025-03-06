@@ -942,6 +942,9 @@ if (menuData[style]) {
                     <button class="delete" onclick="deleteItem('${item.name}'); event.stopPropagation();">
                         <i class="fas fa-trash"></i>
                     </button>
+                    <button class="showdetail" onclick="showDetails('${item.name}', '${style}')"> 
+                    <i class="fa fa-bars"></i> 
+                    </button>
                 </div>
             </button>
         `;
@@ -971,7 +974,10 @@ function displayAllDishes() {
                     </button>
                     <button class="delete" onclick="deleteItem('${dish.name}'); event.stopPropagation();">
                         <i class="fas fa-trash"></i>
-                    </button
+                    </button>
+                    <button class="showdetail" onclick="showDetails('${dish.name}', '${style}')"> 
+                    <i class="fa fa-bars"></i> 
+                    </button>
                 </div>
             </button>
             `;
