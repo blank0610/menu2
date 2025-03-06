@@ -78,6 +78,10 @@ header {
     font-size: 120%;
 }
 
+.hidden-title {
+    display: none;
+}
+
 .all-menu-h2 {
     display: none;
     font-size: 120%;
@@ -440,9 +444,16 @@ display: inline;
     #indexaddpage {
         margin: 0px 0px;
         padding: 5% 10%;
-        text-align: left;
+        text-align: center;
 
     }
+
+    .calndar {
+        margin-right: 0;
+        margin-left: 0%;
+        padding-left: 0%;
+    }
+
     
     .menu-item, .all-menu-item {
         margin-left: 5%;
