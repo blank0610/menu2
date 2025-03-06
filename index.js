@@ -872,7 +872,10 @@ const backgroundImages = {
     Italy: "url('italy5.jpg')",
     Dessert: "url('d6.jpg')",
     Drink: "url('drink3.jpg')",
-    Sauce: "url('s4.jpg')"
+    Sauce: "url('s4.jpg')",
+    alldish: "url('main.jpg')",
+    index: "url('main.jpg')",
+
 };
 
 const landscapebackgroundImages = {
@@ -883,6 +886,8 @@ const landscapebackgroundImages = {
     Dessert: "url('dv5.jpg')", // Corrected the filename from dv1jpg to dv1.jpg
     Drink: "url('drinkv1.jpg')",
     Sauce: "url('s4-landscape.jpg')",
+    alldish: "url('mainv.jpg')",
+    index: "url('mainv.jpg')"
 };
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -975,7 +980,7 @@ function displayAllDishes() {
                     <button class="delete" onclick="deleteItem('${dish.name}'); event.stopPropagation();">
                         <i class="fas fa-trash"></i>
                     </button>
-                    <button class="showdetail" onclick="showDetails('${dish.name}', '${style}')"> 
+                    <button class="showdetail" onclick="showDetails('${dish.name}', '${cuisine}')"> 
                     <i class="fa fa-bars"></i> 
                     </button>
                 </div>
